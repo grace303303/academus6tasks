@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Error</title>
+
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/fonts/Serif/cmun-serif.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Martel+Sans|Open+Sans|Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/css/bootstrap.min.css') }}">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template -->
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/css/blog.css') }}?t=[timestamp]">
+
+        <link rel="stylesheet" href='https://academ.us/static/styles/css/bootstrap.min.css'>
+        <link rel= "stylesheet" type= "text/css" href= "style_grace.css">
+  </head>
+
+  <body>
+      <div class="error-wrapper">
+          <div class="error-content">
+          <p class="opps">Opps!</p>
+          <p class="error-msg">{{message}}</p>
+          <p class="backtohome"><a href="#">BACK TO HOME</a></p>
+          <img src="error-img.png">
+        </div>
+      </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="{{ url_for('static',  filename='styles/js/bootstrap.min.js') }}"></script>
+  </body>
+</html>

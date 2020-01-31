@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        {{article_name}}
+    </title>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Lora|Martel+Sans|Open+Sans|Source+Sans+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href='https://academ.us/static/styles/css/bootstrap.min.css'>
+        <link rel= "stylesheet" type= "text/css" href= "style_grace.css">
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    </head>
+    <body>
+    <div>
+    <!--loader-->
+    <div class="loader-wrapper">
+         <div class="ajax-spinner-bars"><div class='bar-1'></div><div class='bar-2'></div><div class='bar-3'></div><div class='bar-4'></div><div class='bar-5'></div><div class='bar-6'></div><div class='bar-7'></div><div class='bar-8'></div><div class='bar-9'></div><div class='bar-10'></div><div class='bar-11'></div><div class='bar-12'></div><div class='bar-13'></div><div class='bar-14'></div><div class='bar-15'></div><div class='bar-16'></div></div>
+    </div><!--loader ends-->
+    <p class="loader-text">arXiview is preparing the article for the first use...<br>It may take about 1 minute. Please do not refresh the page.</p>   
+    </div>
+        
+        <script>
+            $(function () {
+                $.ajax({
+                  url: '/ajax_download?article=' + document.title,
+                  success: function(response) {
+                    $("#content").html(response);
+                  },
+                  error: function(error) {
+                    console.log(error);
+                  }
+                });
+            })
+        </script>
+    </body>
+</html>

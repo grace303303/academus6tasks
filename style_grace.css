@@ -1,0 +1,349 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/*A. loading page CSS*/
+.loader-wrapper {
+	padding-top:200px;
+	padding-bottom:150px;
+}
+
+.loader-text {
+font-size:18px;
+color: #6b6b6b;
+text-align: center;
+margin:auto 20px;
+font-family: 'Source Sans Pro', sans-serif; 
+}
+
+.ajax-spinner-bars {
+  width:35px;
+  height:35px;
+  position:absolute;
+  left:50%;
+}
+.ajax-spinner-bars > div {
+  position: absolute;
+  width: 2px;
+  height: 8px;
+  background-color: #25363F;
+  opacity: 0.05;
+  animation: fadeit 0.8s linear infinite;
+}
+.ajax-spinner-bars > .bar-1 {
+  transform: rotate(0deg) translate(0, -12px);
+  animation-delay:0.05s;
+}
+.ajax-spinner-bars > .bar-2 {
+  transform: rotate(22.5deg) translate(0, -12px);
+  animation-delay:0.1s;
+}
+.ajax-spinner-bars > .bar-3 {
+  transform: rotate(45deg) translate(0, -12px);
+  animation-delay:0.15s;
+}
+.ajax-spinner-bars > .bar-4 {
+  transform: rotate(67.5deg) translate(0, -12px);
+  animation-delay:0.2s;
+}
+.ajax-spinner-bars > .bar-5 {
+  transform: rotate(90deg) translate(0, -12px);
+  animation-delay:0.25s;
+}
+.ajax-spinner-bars > .bar-6 {
+  transform: rotate(112.5deg) translate(0, -12px);
+  animation-delay:0.3s;
+}
+.ajax-spinner-bars > .bar-7 {
+  transform: rotate(135deg) translate(0, -12px);
+  animation-delay:0.35s;
+}
+.ajax-spinner-bars > .bar-8 {
+  transform: rotate(157.5deg) translate(0, -12px);
+  animation-delay:0.4s;
+}
+.ajax-spinner-bars > .bar-9 {
+  transform: rotate(180deg) translate(0, -12px);
+  animation-delay:0.45s;
+}
+.ajax-spinner-bars > .bar-10 {
+  transform: rotate(202.5deg) translate(0, -12px);
+  animation-delay:0.5s;
+}
+.ajax-spinner-bars > .bar-11 {
+  transform: rotate(225deg) translate(0, -12px);
+  animation-delay:0.55s;
+}
+.ajax-spinner-bars > .bar-12 {
+  transform: rotate(247.5deg) translate(0, -12px);
+  animation-delay:0.6s;
+}
+.ajax-spinner-bars> .bar-13 {
+  transform: rotate(270deg) translate(0, -12px);
+  animation-delay:0.65s;
+}
+.ajax-spinner-bars > .bar-14 {
+  transform: rotate(292.5deg) translate(0, -12px);
+  animation-delay:0.7s;
+}
+.ajax-spinner-bars > .bar-15 {
+  transform: rotate(315deg) translate(0, -12px);
+  animation-delay:0.75s;
+}
+.ajax-spinner-bars> .bar-16 {
+  transform: rotate(337.5deg) translate(0, -12px);
+  animation-delay:0.8s;
+}
+@keyframes fadeit{
+  0%{ opacity:1; }
+  100%{ opacity:0;}
+}
+
+
+/*B. error page CSS*/
+.error-wrapper {
+    background-color: #f9f9f9;
+    height: 100vh;
+
+}
+.error-content {
+    margin: auto 20px;
+    padding-top: 100px;
+    text-align: center;
+    
+}
+.opps {
+    font-size:50px;
+    font-family: 'Varela Round', sans-serif;
+    color: #555;
+}
+
+.error-msg, .backtohome {
+    font-size:20px; 
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #555;
+}
+
+.backtohome a:link, .backtohome a:visited {
+  background-color:#555;
+  color: white;
+  padding: 10px 25px;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 12px;
+  margin: 30px auto;
+}
+
+.backtohome a:hover{
+    background-color: #a1a1a1;
+}
+
+.error-wrapper img {
+    width:15%;
+}
+
+/*C. Equation & Table Scrollbar CSS*/
+.math.display {
+    display: block;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.table-scroll {
+    overflow-x:auto;
+}
+
+table td {
+    padding: 3px;
+}
+/*D. Sidebar Figures*/
+.blog-sidebar {
+    position: fixed;
+    top: 65px;
+    right: 30px;
+}
+.sidebar-module ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.sidebar-module ul > li {
+  background-color: #F5F5F5;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar-module ul > li:hover {
+   background-color: #ddd;
+}
+.sidebar-module ul > li.active {
+   background-color: #ddd;
+}
+
+.sidebar-module ul > li >h4 {
+  margin: 5px auto;
+}
+
+.nonsticky-sidebar img, .sticky-sidebar img {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#sidebar-figure {
+    height: 280px;
+    overflow-y: scroll;  
+}
+
+#sidebar-figure img {
+    width: 100%;
+   
+}
+
+
+/*D format image height*/
+
+.subfigures p {
+    height: 500px;
+    display: block;
+    overflow-y: scroll;
+
+}
+
+/*E Refactor listing page*/
+.blog-title, .blog-id {
+   font-family: 'Martel Sans', sans-serif;
+}
+h3.blog-title, h3.article-title {
+    font-weight: 1000;
+}
+.article-title a, .article-author a{
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #3f72af;
+}
+.list-article-abstract {
+    font-family: 'Lora', serif;
+}
+/* Nav and Footer for all other pages*/
+.blog-nav-item {
+    font-family: 'Open Sans', sans-serif;
+    vertical-align: middle;
+    color: #ffffff;
+    font-weight: 1000;
+}
+nav ul {
+  list-style: none;
+  text-align: left;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+
+.stroke a {
+  position: relative;
+}
+.stroke a:hover {
+    color: #ffffff;
+}
+.stroke a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background:#f9f7f7;
+  height: 1.5px;
+}
+.stroke a:hover:after {
+  width: 100%;
+}
+
+footer.blog-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  background-color: #f9f7f7;
+  
+}
+footer.blog-footer a {
+  color: #515154;  
+}
+.blog-footer ul {
+    list-style: none;
+    text-align: center;
+}
+.blog-footer li {
+   display: inline-block;
+   margin: auto 10px;
+}
+footer.blog-footer a:hover {
+  text-decoration: none;
+  color: #868687;
+}
+
+.blog-masthead {
+    background-color:#112d4e;
+}
+/*media queries*/
+@media only screen and (max-width: 700px) {
+.blog-sidebar {
+/*
+    position: relative;
+    margin: auto auto 85px;
+    width: 80%;
+*/
+    display: none;
+}
+}
+@media only screen and (max-width: 500px) {
+.loader-wrapper {
+  padding-top:50px;
+  padding-bottom:80px;
+} 
+.loader-text {
+  font-size:12px;
+  margin:auto 30px;
+}
+.ajax-spinner-bars > div {
+  width: 1px;
+  height: 3px;
+}  
+.error-content {
+    padding-top: 50px;  
+}
+.opps {
+    font-size:35px;
+}
+.error-msg, .backtohome {
+    font-size:15px;
+}
+.backtohome a:link, .backtohome a:visited {
+  margin: 20px auto;
+}
+.subfigures p {
+    height: 100px;
+
+}
+
+}
+
+
+/*https://codepen.io/maheshambure21/pen/QwXaRw*/

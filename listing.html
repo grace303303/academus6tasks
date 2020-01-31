@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+
+    <title>Article Viewer</title>
+        
+    <script src="https://kit.fontawesome.com/02a54db174.js" crossorigin="anonymous"></script>
+    <link rel= "stylesheet" type= "text/css" href= "https://academ.us/static/styles/fonts/Serif/cmun-serif.css"><link href="https://fonts.googleapis.com/css?family=Lora|Martel+Sans|Open+Sans|Source+Sans+Pro&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap core CSS -->
+    <link rel= "stylesheet" type= "text/css" href= "https://academ.us/static/styles/css/bootstrap.min.css">
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <!-- <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template -->
+    <link rel= "stylesheet" type= "text/css" href= "https://academ.us/static/styles/css/blog.css?%3C?php%20echo%20date(%27l%20jS%20\of%20F%20Y%20h:i:s%20A%27);%20?%3E">
+     <link rel= "stylesheet" type= "text/css" href= "style_grace.css">
+   
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+       tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true,
+        equationNumbers: {autoNumber: "AMS"}
+       }
+    });
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML"></script>
+      <!--TeX-MML-AM_CHTML-->
+  </head>
+
+  <body>
+
+ 
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="">
+         <ul>
+          <li><a class="blog-nav-item" href="{{ url_for('index_page')}}"><img src="https://academ.us/static/assets/logo.png" height="25" width="100"></a></li>
+          <li class="nav-home stroke"><a class="blog-nav-item active" href="#">HOME</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+    <div class="container">
+      <div class="blog-header">
+        <h3 class="blog-title">New articles on {{category_name}}</h3>
+      </div>
+        <hr>
+      <div class="row">
+        <div class="col-sm-8 blog-main">
+          {% for article in articles %}
+            <h3 class="blog-id">[{{article.id}}] {{article.article_name}} </h3>
+            <h3 class="article-title"><a href="{{url_for('article', article_name = article.article_name)}}" target="_blank">{{article.title}}</a></h3>
+            <p class="blog-post-meta  article-author">
+              {% for author in article.author %}
+              <a href="#">{{author}}</a>
+                {{"," if not loop.last}}
+              {% endfor %}
+            </p>
+              <div class="blog-post">
+                <p class="more list-article-abstract">{{article.abstract}}</p>
+              </div>
+          <hr>
+          {% endfor %}
+        </div> <!--col-->
+      </div> <!--row-->
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      <div>
+          <ul>
+              <li><a href="#"><i class="fab fa-github fa-lg"></i></a></li>
+              <li><a href="#"><i class="fab fa-facebook fa-lg"></i></a></li>
+              <li><a href="#"><i class="fab fa-twitter-square fa-lg"></i></a></li>
+          </ul>
+     </div>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script type="text/javascript" src="{{ url_for('static',  filename='styles/js/bootstrap.min.js') }}"></script>
+    <SCRIPT type="text/javascript">
+    $(document).ready(function() {
+        var showChar = 260;
+        var ellipsestext = "...";
+        var moretext = "Show more";
+        var lesstext = "Show less";
+        $('.more').each(function() {
+            var content = $(this).html();
+
+            if(content.length > showChar) {
+
+                var c = content.substr(0, showChar);
+                var h = content.substr(showChar, content.length - showChar);
+
+                var html = c + '<span class="moreelipses">'+ellipsestext+'</span><span class="morecontent"><span>' + h + '</span>&nbsp;&nbsp;<a href="" class="morelink">'+moretext+'</a></span>';
+
+                $(this).html(html);
+            }
+
+        });
+
+        $(".morelink").click(function(){
+            if($(this).hasClass("less")) {
+                $(this).removeClass("less");
+                $(this).html(moretext);
+            } else {
+                $(this).addClass("less");
+                $(this).html(lesstext);
+            }
+            $(this).parent().prev().toggle();
+            $(this).prev().toggle();
+            return false;
+        });
+    });
+    </SCRIPT>
+  </body>
+</html>
