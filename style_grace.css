@@ -205,13 +205,11 @@ table td {
 
 
 /*D format image height*/
-
-.subfigures p {
-    height: 500px;
-    display: block;
-    overflow-y: scroll;
-
+.imgcss-placeholder {
+    width: 50%;
+    height: auto;
 }
+
 
 /*E Refactor listing page*/
 .modal-footer:after {
@@ -342,10 +340,6 @@ footer.blog-footer a:hover {
 }
 .backtohome a:link, .backtohome a:visited {
   margin: 20px auto;
-}
-.subfigures p {
-    height: 300px;
-
 }
 
 }
