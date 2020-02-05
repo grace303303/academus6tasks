@@ -9,11 +9,11 @@
 
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+<!--    <link rel="icon" href="../../favicon.ico">-->
 
     <title>Sausage & Mash: the dual origin of the Galactic thick disc and halo from the gas-rich Gaia-Enceladus-Sausage merger</title>
 
-    <link rel= "stylesheet" type= "text/css" href= "https://academ.us/static/styles/fonts/Serif/cmun-serif.css">
+<!--    <link rel= "stylesheet" type= "text/css" href= "https://academ.us/static/styles/fonts/Serif/cmun-serif.css">-->
 
     <!-- Bootstrap core CSS -->
     <link rel= "stylesheet" type= "text/css" href= "https://academ.us/static/styles/css/bootstrap.min.css">
@@ -42,7 +42,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item" href="/"><img src="/static/assets/logo.png" height="25" width="100"></a>
+          <a class="blog-nav-item" href="/"><img src="https://academ.us/static/assets/logo.png" height="25" width="100"></a>
           <a class="blog-nav-item active" href="/">Home</a>
 <!--           <a class="blog-nav-item" href="#">New features</a>
           <a class="blog-nav-item" href="#">Press</a>
@@ -325,7 +325,7 @@
 
         </div><!-- /.blog-main -->
 
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+         <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
           <div class="sidebar-module sidebar-module-inset">
             <h4>About</h4>
             <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
@@ -355,7 +355,7 @@
               <li><a href="#">Facebook</a></li>
             </ol>
           </div>
-        </div><!-- /.blog-sidebar -->
+        </div> /.blog-sidebar 
 
       </div><!-- /.row -->
 
@@ -375,9 +375,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
     <script type="text/javascript" src="https://academ.us/static/styles/js/bootstrap.min.js"></script>
-    <!--Codes for formatting image heights-->
-<!--
-    <script type="text/javascript" >
+<!--Codes for formatting image heights-->
+<script type="text/javascript" >
 $(document).ready(function() {
   var imagesLoaded = 0;
   var totalImages = $('img').length;
@@ -392,24 +391,17 @@ $(document).ready(function() {
   }
 
   function allImagesLoaded() {
-      var images = $(".subfigures").find('p');
-        var bigheights =[];
-       for (var i = 0; i<=images.length; i++) {  
-           if (images[i] && images[i].clientHeight>500) {
-               bigheights.push(i);
-           }
-    }
-        console.log(bigheights); 
-//      for (var j=0, j<=bigheights.length; i++) {
-//          console.log('hi');
-//      }
+  var allimages = $('.subfigures img');
+  for (var i=0; i<allimages.length; i++) {
+      if (allimages[i].clientHeight>500) {
+         allimages[i].classList.add("imgcss-placeholder");
+         allimages[i].style.width= "50%";
+      }
   }
-    
+} 
 imageLoaded();
 });
-
-    </script>
--->
-    <!--Codes   
+ </script>
+<!--Codes for formatting image heights end-->
   </body>
 </html>
