@@ -210,6 +210,9 @@ table td {
     height: auto;
 }
 
+p {
+word-wrap: break-word;
+}
 
 /*E Refactor listing page*/
 .modal-footer:after {
